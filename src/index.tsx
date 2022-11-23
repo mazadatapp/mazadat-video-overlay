@@ -20,3 +20,7 @@ const MazadatVideoOverlay = NativeModules.MazadatVideoOverlay
 export function multiply(a: number, b: number): Promise<number> {
   return MazadatVideoOverlay.multiply(a, b);
 }
+
+export function playVideo(link: string): Promise<number> {
+  return MazadatVideoOverlay.playVideo(link);
+}

@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'mazadat-video-overlay';
+import { StyleSheet, View, Text, Button } from 'react-native';
+import { multiply,playVideo } from 'mazadat-video-overlay';
 
 export default function App() {
   const [result, setResult] = React.useState<number | undefined>();
@@ -9,10 +9,12 @@ export default function App() {
   React.useEffect(() => {
     multiply(3, 7).then(setResult);
   }, []);
-
+//"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+    
   return (
     <View style={styles.container}>
       <Text>Result: {result}</Text>
+      <Button title='Open Video' onPress={()=>{playVideo("https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4")}}></Button>
     </View>
   );
 }
