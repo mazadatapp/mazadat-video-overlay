@@ -241,6 +241,9 @@ class VideoPlayerController: UIViewController,PlayerPlaybackDelegate, PlayerDele
     }
     
     func playerPlaybackDidEnd(_ player: Player) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            self.dismiss(animated: true)
+        }
         
     }
     
